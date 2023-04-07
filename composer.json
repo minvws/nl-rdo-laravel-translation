@@ -1,0 +1,61 @@
+{
+  "name": "minvws/laravel-translation-check",
+  "description": "Laravel component for checking translations",
+  "keywords": [
+    "laravel",
+    "translations"
+  ],
+  "type": "library",
+  "license": "EUPL",
+  "authors": [
+    {
+      "name": "Joshua Thijssen",
+      "email": "jthijssen@noxlogic.nl"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^7.30.6|^8.75.0|^9.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0",
+    "phpunit/phpunit": "^9.5",
+    "vimeo/psalm": "^4.23 || ^5.0",
+    "phpstan/phpstan": "^1.7",
+    "squizlabs/php_codesniffer": "^3.6",
+    "mockery/mockery": "^1.4.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "MinVWS\\Laravel\\Translation\\": "src/"
+    },
+    "classmap": [
+      "src/"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "MinVWS\\Laravel\\Translation\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "MinVWS\\Laravel\\Translation\\TranslationServiceProvider"
+      ]
+    }
+  },
+  "scripts": {
+    "test": [
+        "vendor/bin/phpcs",
+        "vendor/bin/phpunit",
+        "vendor/bin/phpstan analyse",
+        "vendor/bin/psalm"
+    ]
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true
+    }
+  }
+}
