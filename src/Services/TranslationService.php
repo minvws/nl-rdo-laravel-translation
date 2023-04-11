@@ -59,6 +59,7 @@ class TranslationService
         $this->retrieveTranslations();
 
         $finder = new Finder();
+        /** @phpstan-ignore-next-line */
         $files = $finder->files()->name("*.json")->in(App::langPath());
 
         foreach ($files as $file) {
@@ -121,7 +122,7 @@ class TranslationService
     }
 
 
-    protected function fetchTranslationKeys($path): array
+    protected function fetchTranslationKeys(string $path): array
     {
         $finder = new Finder();
         $files = $finder->files()->name("*.json")->in($path);
@@ -149,14 +150,14 @@ class TranslationService
         return $transKeys;
     }
 
-    protected function fetchTranslationsFromSource(): array
+    protected function fetchTranslationsFromSource(array $paths): array
     {
         $finder = new Finder();
         $files = $finder->files()
             ->name("*.php")
             ->name("*.js")
         ;
-        foreach ($this->sourcePaths as $path) {
+        foreach ($paths as $path) {
             $files = $files->in($path);
         }
 

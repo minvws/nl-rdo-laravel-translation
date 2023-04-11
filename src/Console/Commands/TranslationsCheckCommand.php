@@ -42,7 +42,7 @@ class TranslationsCheckCommand extends Command
         $langPath = $this->option('langpath') ?? App::basePath('resources/lang');
 
         $this->translationService = new TranslationService(
-            $langPath,
+            strval($langPath),
             [
                 App::basePath('app'),
                 App::basePath('tests'),
