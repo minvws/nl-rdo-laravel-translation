@@ -7,7 +7,6 @@ namespace MinVWS\Laravel\Translation\Console\Commands;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\App;
 use MinVWS\Laravel\Translation\Services\TranslationService;
-use Symfony\Component\Finder\Finder;
 
 /*
  * This is a crude parser that will check our sources for unused or untranslated strings. It is a very rudimentary
@@ -32,17 +31,13 @@ class TranslationsCheckCommand extends Command
 
     protected TranslationService $translationService;
 
-    /**
-     * Execute the console command.
-     *
-     * @return int
-     */
-    public function handle()
+    public function handle(): int
     {
+        /** @var string $langPath */
         $langPath = $this->option('langpath') ?? App::basePath('resources/lang');
 
         $this->translationService = new TranslationService(
-            strval($langPath),
+            $langPath,
             [
                 App::basePath('app'),
                 App::basePath('tests'),
