@@ -42,8 +42,6 @@ $ php artisan translations:check
 It will check for your language files in the default `resources/lang` directory. If your files are located in a different
 directory, you can specify the path with the `langpath` parameter.
 ```bash
-You can also specify a custom path where the language files are located by passing the `langpath` parameter.
-```bash
 $ php artisan translations:check --langpath=resources/lang
 ```
 
