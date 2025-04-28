@@ -59,8 +59,7 @@ class TranslationService
         $this->retrieveTranslations();
 
         $finder = new Finder();
-        /** @phpstan-ignore-next-line */
-        $files = $finder->files()->name("*.json")->in(App::langPath());
+        $files = $finder->files()->name("*.json")->in($this->languagePath);
 
         foreach ($files as $file) {
             $locale = strtoupper($file->getBasename(".json"));
