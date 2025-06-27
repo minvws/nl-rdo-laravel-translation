@@ -1,6 +1,6 @@
 # Laravel Translation (nl-rdo-laravel-translation)
 
-This package provides an easy command for checking for missing translations in your Laravel application. This is not to be used in production.
+This package provides an easy command for checking for missing translations in your Laravel application. We recommend to only use this in development and not in production.
 
 ## Prerequisites
 
