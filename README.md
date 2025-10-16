@@ -12,21 +12,7 @@ This package provides an easy command for checking for missing translations in y
 
 ### Composer
 
-Install the package through composer. Since this is currently a private package, you must
-enable the repository in your `composer.json` file:
-
-```json
-{
-    "repositories": {
-        "minvws/laravel-translation-check": {
-            "type": "vcs",
-            "url": "git@github.com:minvws/nl-rdo-laravel-translation"
-        }
-    }
-}
-```
-
-After that, you can install the package:
+Install the package through composer:
 
 ```bash
 composer require minvws/laravel-translation-check
